@@ -3,7 +3,6 @@
 
     $id=limpiar_cadena($_POST['categoria_id']);
 
-    // Verificar el categoria
     $check_categoria=conexion();
     $check_categoria=$check_categoria->query("SELECT * FROM categoria WHERE categoria_id='$id'");
 
@@ -20,11 +19,9 @@
     }
     $check_categoria=null;
 
-    # Almacenando datos#
     $nombre=limpiar_cadena($_POST['categoria_nombre']);
     $ubicacion=limpiar_cadena($_POST['categoria_ubicacion']);
 
-    # Verificando campos obligatorios #
     if($nombre==""){
         echo '
             <div class="notification is-danger is-light">
@@ -34,8 +31,6 @@
         ';
         exit();
     }
-
-    # Verificando integridad de los datos #
     if(verificar_datos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{4,50}",$nombre)){
         echo '
             <div class="notification is-danger is-light">
@@ -58,7 +53,6 @@
         }
     }
 
-    # Verificando nombre #
     if($nombre!=$datos['categoria_nombre']){
         $check_nombre=conexion();
         $check_nombre=$check_nombre->query("SELECT categoria_nombre FROM categoria WHERE categoria_nombre='$nombre'");
@@ -74,7 +68,6 @@
         $check_nombre=null;
     }
 
-    # Actualizar datos #
     $actualizar_categoria=conexion();
     $actualizar_categoria=$actualizar_categoria->prepare("UPDATE categoria SET categoria_nombre=:nombre,categoria_ubicacion=:ubicacion WHERE categoria_id=:id");
 
