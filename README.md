@@ -10,9 +10,7 @@ Problema identificado
 -Los errores de transcripción y duplicados afectan la confiabilidad de los datos.
 
 Diseño
-
-Login.
-
+-Login.
 -Ventana en donde podemos importar y exportar el Excel.
 -Ventana de reporte.
 -Interfaz para buscar y filtrar.
@@ -20,6 +18,13 @@ Login.
 -Previsualización de impresión.
 -Opción de PDF.
 -Previsualización de PDF.
+
+Instalacion
+-descomprime el ZIP
+-Configurar la base de datos
+-Importar el proyecto al IDE
+-Ejecutar la aplicación
+-Verificar funcionamiento
 
 Base de datos
 -Phpmyadmin
