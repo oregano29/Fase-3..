@@ -1,12 +1,10 @@
 <?php
     $category_id_del=limpiar_cadena($_GET['category_id_del']);
-
-    // Verificando categoria
+=
     $check_categoria=conexion();
     $check_categoria=$check_categoria->query("SELECT categoria_id FROM categoria WHERE categoria_id='$category_id_del'");
     if($check_categoria->rowCount()==1){
-
-        // Verificando productos
+=
         $check_productos=conexion();
         $check_productos=$check_productos->query("SELECT categoria_id FROM producto WHERE categoria_id='$category_id_del' LIMIT 1");
 
